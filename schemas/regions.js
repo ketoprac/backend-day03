@@ -15,7 +15,7 @@ export default class regions extends Model {
       allowNull: true
     },
     region_photo: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {

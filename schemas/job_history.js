@@ -14,12 +14,12 @@ export default class job_history extends Model {
       }
     },
     start_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING(19),
       allowNull: false,
       primaryKey: true
     },
     end_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING(19),
       allowNull: true
     },
     job_id: {

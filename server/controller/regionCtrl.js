@@ -5,7 +5,7 @@ const findAll = async (req, res) => {
     try {
         const region = await req.context.models.regions.findAll({
             include: [{
-                //   all : true
+                //   all : true,
                 model: req.context.models.countries,
                 as: "countries"
             }]

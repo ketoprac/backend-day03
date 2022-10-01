@@ -21,8 +21,6 @@ export default function initModels(sequelize) {
 
   locations.belongsTo(countries, { as: "country", foreignKey: "country_id"});
   countries.hasMany(locations, { as: "locations", foreignKey: "country_id"});
-  employees.belongsTo(departments, { as: "department_department", foreignKey: "department_id"});
-  departments.hasMany(employees, { as: "employees", foreignKey: "department_id"});
   job_history.belongsTo(departments, { as: "department", foreignKey: "department_id"});
   departments.hasMany(job_history, { as: "job_histories", foreignKey: "department_id"});
   departments.belongsTo(employees, { as: "manager", foreignKey: "manager_id"});

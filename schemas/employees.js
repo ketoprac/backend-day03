@@ -27,7 +27,7 @@ export default class employees extends Model {
       allowNull: true
     },
     hire_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING(10),
       allowNull: true
     },
     job_id: {
@@ -55,15 +55,11 @@ export default class employees extends Model {
       }
     },
     department_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'departments',
-        key: 'department_id'
-      }
+      type: DataTypes.STRING(3),
+      allowNull: true
     },
     xemp_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(1),
       allowNull: true
     }
   }, {

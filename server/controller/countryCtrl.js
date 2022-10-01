@@ -6,7 +6,7 @@ const findAll = async (req, res) => {
         return res.send(country)
     } catch (error) {
         return res.status(404).send(error)
-    }
+    }xa
 }
 const findOne = async (req, res) => {
     try {
