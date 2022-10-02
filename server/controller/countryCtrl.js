@@ -47,7 +47,6 @@ const createnext = async (req,res)=>{
 }
 
 const update = async (req, res) => {
-    console.log();
     try {
         const country = await req.context.models.countries.update({
             country_name: req.body.country_name,

@@ -1,9 +1,9 @@
-import { sequlelize } from "../models/init-models";
+import { sequelize } from "../models/init-models";
 
 const findAll = async (req, res) => {
   try {
     const employee = await req.context.models.employees.findAll();
-    return res.send(country);
+    return res.send(employee);
   } catch (error) {
     return res.status(404).send(error);
   }
@@ -23,7 +23,6 @@ const findOne = async (req, res) => {
 const create = async (req, res) => {
   try {
     const employee = await req.context.models.employees.create({
-      employee_id: req.body.employee_id,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
@@ -76,7 +75,7 @@ const deleted = async (req, res) => {
       const employee = await req.context.models.employees.destroy({
           where: { employee_id: req.params.id }
       })
-      return res.send(employee + ' data successfully deleted')
+      return res.json({message: "Employee successfully deleted!"});
   } catch (error) {
       return res.status(404).send(error)
   }

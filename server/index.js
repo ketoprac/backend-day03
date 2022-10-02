@@ -25,6 +25,10 @@ app.use("/region", routes.RegRoute);
 app.use("/auth", routes.UsrRoute);
 app.use("/country", routes.CtsRoute);
 app.use("/department", routes.DptRoute);
+app.use("/job", routes.JobRoute);
+app.use("/job_history", routes.JobHstRoute);
+app.use("/employee", routes.EmpRoute);
+app.use("/location", routes.LctRoute);
 app.use("/images", express.static("images"));
 
 const dropDatabaseSync = false;

@@ -23,18 +23,19 @@ const findOne = async (req, res) => {
 const create = async (req, res) => {
   try {
     const department = await req.context.models.departments.create({
-      department_id: req.body.department_id,
+      // department_id: req.body.department_id,
       department_name: req.body.department_name,
       manager_id: req.body.manager_id,
       location_id: req.body.location_id
     })
     return res.send(department);
   } catch (error) {
+    console.log("error >>", error);
     return res.status(404).send(error);
   }
 }
 
-const createnext = async (req, res) => {
+const createNext = async (req, res) => {
   try {
 
   } catch (error) {
@@ -47,7 +48,7 @@ const update = async (req, res) => {
     const department = await req.context.models.departments.update({
       department_name: req.body.department_name,
       manager_id: req.body.manager_id,
-      location_id: req.body.location
+      location_id: req.body.location_id
     }, { returning: true, where: { department_id: req.params.id}});
     console.log(department);
     return res.send(department);
@@ -61,7 +62,7 @@ const deleted = async (req, res) => {
     const department = await req.context.models.departments.destroy({
       where: { department_id: req.params.id }
     });
-    return res.send(department);
+    return res.json({message: "Department successfully deleted!"});
   } catch (error) {
     return res.status(404).send(error);
   }
@@ -84,7 +85,7 @@ export default {
   findAll,
   findOne,
   create,
-  createnext,
+  createNext,
   update,
   deleted,
   querySQL
