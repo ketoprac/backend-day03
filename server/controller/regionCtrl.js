@@ -1,4 +1,3 @@
-import { NOTFOUND } from "dns"
 import { sequelize } from "../models/init-models"
 
 const findAll = async (req, res) => {

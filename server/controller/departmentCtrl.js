@@ -35,14 +35,6 @@ const create = async (req, res) => {
   }
 }
 
-const createNext = async (req, res) => {
-  try {
-
-  } catch (error) {
-
-  }
-}
-
 const update = async (req, res) => {
   try {
     const department = await req.context.models.departments.update({
@@ -85,7 +77,6 @@ export default {
   findAll,
   findOne,
   create,
-  createNext,
   update,
   deleted,
   querySQL

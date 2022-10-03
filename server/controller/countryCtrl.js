@@ -32,7 +32,7 @@ const create = async (req, res) => {
     }
 }
 
-const createnext = async (req,res)=>{
+const createNext = async (req,res)=>{
     const cekReg = req.regions
     try {
         const country = await req.context.models.countries.create({
@@ -88,5 +88,5 @@ export default {
     update,
     deleted,
     querySQL,
-    createnext
+    createNext
 }
